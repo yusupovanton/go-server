@@ -12,7 +12,7 @@ func formhandler(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	fmt.Fprintf(w, "POST request successful")
+	fmt.Fprintf(w, "POST request successful\n")
 	name := r.FormValue("name")
 	address := r.FormValue("address")
 	fmt.Fprintf(w, "Name = %s\n", name)
@@ -29,7 +29,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method is not supported", http.StatusNotFound)
 		return
 	}
-
+	fmt.Fprintf(w, "Hello!")
 }
 
 func main() {
